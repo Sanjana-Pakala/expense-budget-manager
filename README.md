@@ -70,8 +70,4 @@ To develop a simple and efficient financial management application that helps us
 
 **Sanjana Pakala**
 
-GitHub: [Sanjana-Pakala](https://github.com/Sanjana-Pakala)
 
----
-
-⭐ If you find this project useful, consider giving it a star!
