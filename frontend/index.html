@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Expense & Budget Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>💰 Expense & Budget Manager</h1>
+            <p>Track your income, expenses and budget easily.</p>
+        </header>
+
+        <section class="summary">
+
+            <div class="card">
+                <h3>Total Income</h3>
+                <p id="totalIncome">₹0</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Expenses</h3>
+                <p id="totalExpenses">₹0</p>
+            </div>
+
+            <div class="card">
+                <h3>Balance</h3>
+                <p id="balance">₹0</p>
+            </div>
+
+        </section>
+
+        <section class="form-section">
+
+            <h2>Add Transaction</h2>
+
+            <form id="transactionForm">
+
+                <label>Transaction Type</label>
+
+                <select id="transactionType" required>
+                    <option value="expense">Expense</option>
+                    <option value="income">Income</option>
+                </select>
+
+
+                <label>Category</label>
+
+                <select id="category" required>
+                    <option value="Food">Food</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Education">Education</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Salary">Salary</option>
+                    <option value="Other">Other</option>
+                </select>
+
+
+                <label>Amount</label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    placeholder="Enter amount"
+                    min="1"
+                    required
+                >
+
+
+                <label>Description</label>
+
+                <input
+                    type="text"
+                    id="description"
+                    placeholder="Example: Lunch"
+                >
+
+
+                <label>Date</label>
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+
+                <button type="submit">
+                    Add Transaction
+                </button>
+
+            </form>
+
+        </section>
+        <section class="budget-section">
+
+    <h2>Monthly Budget</h2>
+
+    <div class="budget-form">
+
+        <input
+            type="number"
+            id="budgetInput"
+            placeholder="Enter monthly budget"
+        >
+
+        <button id="setBudgetBtn">
+            Set Budget
+        </button>
+
+    </div>
+
+    <div class="budget-info">
+
+        <p>
+            Monthly Budget:
+            <strong id="monthlyBudget">₹0</strong>
+        </p>
+
+        <p>
+            Amount Spent:
+            <strong id="amountSpent">₹0</strong>
+        </p>
+
+        <p>
+            Remaining:
+            <strong id="remainingBudget">₹0</strong>
+        </p>
+
+    </div>
+    <div class="budget-health">
+
+    <h3>Budget Health</h3>
+
+    <p id="budgetHealth">
+        Set a budget to see your health score.
+    </p>
+
+</div>
+
+</section>
+</section>
+
+<section class="insights-section">
+
+    <h2>💡 Spending Insights</h2>
+
+    <div id="insights">
+        <p>Loading insights...</p>
+    </div>
+
+</section>
+<!-- Expense Breakdown Chart -->
+<section class="chart-section">
+
+    <h2>Expense Breakdown</h2>
+
+    <canvas id="expenseChart"></canvas>
+
+</section>
+
+
+<!-- Income vs Expenses Chart -->
+<section class="chart-section">
+
+    <h2>📊 Income vs Expenses</h2>
+
+    <canvas id="incomeExpenseChart"></canvas>
+
+</section>
+
+        <section class="transactions-section">
+
+        <h2>Recent Transactions</h2>
+
+        <div class="filters">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search transactions..."
+        >
+
+        <select id="filterCategory">
+
+            <option value="All">All Categories</option>
+            <option value="Food">Food</option>
+            <option value="Travel">Travel</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Education">Education</option>
+            <option value="Bills">Bills</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Salary">Salary</option>
+            <option value="Other">Other</option>
+
+        </select>
+
+    </div>
+
+    <div id="transactionsList">
+        <p>No transactions found.</p>
+    </div>
+
+</section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
